@@ -19,8 +19,7 @@ if use_ex:
   df = sns.load_dataset("tips")
   df = df.dropna()
   st.success("Loaded Dataste: 'tips' ")
-else:
-  upload_file = st.sidebar.file_uploader("Upload your CSV file", type=['csv'])
+else: upload_file = st.sidebar.file_uploader("Upload your CSV file", type=['csv'])
  if upload_file:
    df = pd.read_CSV(upload_file)
  else:
