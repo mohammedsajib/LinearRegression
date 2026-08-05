@@ -17,13 +17,13 @@ use_ex = st.sidebar.checkbox("use Expal Dataset")
 #Load
 if use_ex:
   df = sns.load_dataset("tips")
-  df = df.deopna()
+  df = df.dropna()
   st.success("Loaded Dataste: 'tips' ")
 else:
- upload_file = st.sidebar.file_uploader("Upload your CSV file", type=['csv'])
+  upload_file = st.sidebar.file_uploader("Upload your CSV file", type=['csv'])
  if upload_file:
    df = pd.read_CSV(upload_file)
-  else:
+ else:
     st.warning("plz upload csv file")
     st.stop()
   
