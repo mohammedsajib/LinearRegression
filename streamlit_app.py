@@ -32,14 +32,3 @@ else:
     else:
         st.warning("Please upload a CSV file.")
         st.stop()
-
-# Show Dataset
-st.subheader("Dataset Preview")
-st.dataframe(df)
-
-# Dataset Shape
-st.write("Shape:", df.shape)
-
-# Dataset Info
-st.subheader("Column Names")
-st.write(df.columns.tolist())
