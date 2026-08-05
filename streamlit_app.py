@@ -18,7 +18,7 @@ use_ex = st.sidebar.checkbox("use Expal Dataset")
 if use_ex:
   df = sns.load_dataset("tips")
   df = df.deopna()
-  st.success("Loaded Dataste: "tips")
+  st.success("Loaded Dataste: 'tips' ")
 else:
  upload_file = st.sidebar.file_uploader("Upload your CSV file", type=['csv'])
  if upload_file:
