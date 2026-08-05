@@ -6,4 +6,4 @@ st.subheader("Machine Learning With Sajib")
 
 st.sidebar.header("Upload CSV data")
 
-st.sidebar.checkbook("use Expal Dataset")
+st.sidebar.checkbok("use Expal Dataset")
