@@ -39,7 +39,7 @@ st.subheader("Dataset Preview")
 st.dataframe(df)
 
 #model
-numric_cols = df.select_dtypes(inlude=np.number).colums.tolist()
+numric_cols = df.select_dtypes(include=np.number).colums.tolist()
 if len(numric_cols)<2:
     st.erroe("Need At least two numric lolum")
     st.stop()
