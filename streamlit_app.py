@@ -48,7 +48,8 @@ target = st.selectbox("Select Target Output", numeric_cols)
 
 features = st.multiselect(
     "Select Input Feature Columns",
-    [col for col in numeric_cols if col != target]
+    [col for col in numeric_cols if col != target],
+     default= [col for col in numeric_cols if col != target]
 )
 
 
