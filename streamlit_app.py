@@ -45,3 +45,7 @@ if len(numeric_cols) < 2:
     st.error("Need at least two numeric columns")
     st.stop()
 target = st.selectbox("select Target output", numeric_cols)
+f = st.multiselect("select input featur colums", [col for col in numeric_cols if col ! = target])
+
+
+
