@@ -39,9 +39,9 @@ st.subheader("Dataset Preview")
 st.dataframe(df)
 
 #model
-numric_cols = df.select_dtypes(include=np.number).colums.tolist()
-if len(numric_cols)<2:
-    st.erroe("Need At least two numric lolum")
+numeric_cols = df.select_dtypes(include=np.number).columns.tolist()
+
+if len(numeric_cols) < 2:
+    st.error("Need at least two numeric columns")
     st.stop()
-    
 
