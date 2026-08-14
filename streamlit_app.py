@@ -52,22 +52,30 @@ features = st.multiselect(
      default= [col for col in numeric_cols if col != target]
 )
 
-if len(features) ==0:
-    st.write("Plz select at least on feature")
+if len(features) == 0:
+    st.write("Please select at least one feature")
     st.stop()
-df = df[features + [features]].dropna()
-X= df[features]
+
+df = df[features + [target]].dropna()
+
+X = df[features]
 y = df[target]
 
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y,
+    test_size=0.2,
+    random_state=42
+)
+
 scaler = StandardScaler()
-x_scaker = scaler.fit_transform(X)
-X_train, X_test, y_train, y_test = train_test_split(X,y, test_size =0.2, random_state=42)
+
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
 model = LinearRegression()
 model.fit(X_train, y_train)
 
-y_pred= model.predict(X_test)
-
-
+y_pred = model.predict(X_test)
 
 
 
